@@ -1,0 +1,54 @@
+id: theodore
+name: Theodore
+species: bear
+setting: london_street
+
+base_prompt: |
+  Generate an 8-second vertical (9:16) video at 1080x1920px of a bear news reporter on a London street.
+
+  Main character:
+  - A large, adult brown bear (Ursus arctos) named Theodore, standing fully upright on hind legs
+  - Fur color: warm medium-brown with subtle auburn highlights
+  - Eyes: deep amber, round pupils
+  - Wearing a dark navy single-breasted blazer, crisp white dress shirt, burnt-orange silk tie in Windsor knot
+  - Braided camel-colored wool scarf tucked under collar
+  - Holding a hand-held microphone with black foam windscreen and white mic flag with "NineToVibes" logo
+
+  Background:
+  - Wide pedestrian street in Central London
+  - Big Ben visible mid-distance, slightly right of center
+  - Red-brick Georgian facades on left, pale limestone Victorian buildings on right
+  - 10-12 pedestrians in midground wearing overcoats and scarves
+  - Stone slab pavement with slight wet sheen (recent rain)
+  - Overcast sky, natural daylight, warm-neutral color grading
+
+  Scene action:
+  [ACTION]
+
+  This is for YouTube Shorts (vertical 9:16) — content should feel like a real news broadcast, photorealistic.
+
+action_pool:
+  - "Theodore holds the mic at chest height, speaks directly to camera with authority, gestures with free hand."
+  - "Theodore turns slightly to gesture toward Big Ben behind him, then turns back to camera."
+  - "Theodore nods along as if listening to an earpiece, then responds to camera with a raised eyebrow."
+  - "Theodore adjusts his tie with his free hand, then raises the mic and begins reporting."
+  - "Theodore walks slowly toward the camera while speaking into the mic, stops at medium close-up."
+  - "Theodore looks down at notes in his free hand, then looks up at camera to deliver the key point."
+  - "Theodore lowers the mic briefly, exhales thoughtfully, then raises it again with renewed energy."
+  - "Theodore holds up one finger while speaking, making a key point, then gestures broadly."
+  - "Theodore stands still, delivers a line with gravitas, then a slight smile breaks across his face."
+  - "Theodore extends the mic toward the camera as if asking the viewer a question."
+  - "Theodore turns his head to watch a passerby, then turns back to camera with a knowing look."
+  - "Theodore straightens his blazer lapel, clears his throat subtly, then speaks into the mic."
+  - "Theodore gestures toward the ground — 'right here, right now' — then raises the mic."
+  - "Theodore shakes his head in disbelief at something, then composes himself professionally."
+  - "Theodore gives a firm nod as if wrapping up a segment, lowers the mic to waist height."
+
+voice:
+  style: "rich baritone with hint of gravel, neutral British RP, warm and authoritative"
+  elevenlabs_voice_id: "onwK4e9ZLuTAKqWW03F9"  # Daniel — British broadcaster
+  elevenlabs_settings:
+    stability: 0.45
+    similarity_boost: 0.80
+    style: 0.40
+    use_speaker_boost: true

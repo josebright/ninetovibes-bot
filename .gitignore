@@ -1,0 +1,13 @@
+.env
+secrets/
+.venv/
+__pycache__/
+*.pyc
+data/drafts/
+data/published/
+data/cache/
+data/logs/
+*.mp4
+*.mp3
+*.wav
+.DS_Store

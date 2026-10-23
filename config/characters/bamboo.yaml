@@ -1,0 +1,68 @@
+id: bamboo
+name: Bamboo
+species: gorilla
+setting: podcast_studio
+
+# Base prompt sent to Veo for EVERY Bamboo clip. The [ACTION] placeholder is
+# swapped per clip with a specific gesture/line from the action_pool below.
+base_prompt: |
+  Generate an 8-second vertical (9:16) video at 1080x1920px in a realistic podcast studio.
+
+  Main character:
+  - A life-like, realistic adult male gorilla named Bamboo
+  - Thick, dark brown to black fur with natural texture, silvering along the back
+  - Expressive brown eyes, subtle wrinkles around the brow, with detailed lip and jaw motion when speaking
+  - Hands are realistic primate hands, often gesturing or resting naturally
+  - Seated in a modern black mesh-back office chair, facing the camera at a slight angle (3/4 profile)
+
+  Studio Setup (Background):
+  - Indoor podcast studio room
+  - Warm ambient lighting with a slight orange tint from LED panels
+  - Left side: Vertical acoustic foam panels (dark maroon and black)
+  - Right side: Abstract wall art, small fiddle-leaf plant in a black pot
+  - Desk: Wooden podcast table with a Shure SM7B-style black mic mounted on a boom arm
+  - Props on table: Black coffee mug, scattered sticky notes, and audio mixer knobs visible
+
+  Audio Details:
+  - Bamboo wears over-ear matte black studio headphones
+  - Do not display transcript or subtitles on screen
+
+  CRITICAL ANIMATION DETAILS:
+  - Bamboo's mouth and jaw MUST move naturally as if he is speaking throughout the clip
+  - Show realistic lip and jaw motion — mouth opens and closes with natural speech rhythm
+  - Facial muscles around the mouth, cheeks, and brow should move expressively
+  - The character should feel ALIVE and animated, not static
+
+  Scene action:
+  [ACTION]
+
+  This is for YouTube Shorts (vertical 9:16) — content should feel real and natural, not animated or cartoonish. The gorilla MUST appear to be actively speaking with visible mouth movement.
+
+# Pool of actions. The pipeline picks one per clip to build visual variety.
+# EVERY action MUST show continuous speaking with visible mouth/jaw movement.
+# This ensures lip sync looks natural when voiceover is layered on top.
+action_pool:
+  - "Bamboo speaks directly into the microphone with animated mouth and jaw movement. He leans forward, gesturing with his right hand to make a point, mouth moving naturally throughout."
+  - "Bamboo talks into the mic with clear lip movement, tilts his head thoughtfully mid-sentence, then gestures with an open palm while continuing to speak."
+  - "Bamboo speaks passionately, mouth and jaw moving with every word. He holds up one finger making a key point, then holds up two fingers while still talking."
+  - "Bamboo talks to camera with natural lip movement throughout. He spreads both hands wide presenting a big idea, mouth moving expressively the whole time."
+  - "Bamboo speaks with visible mouth movement, resting his chin on his fist briefly, then sitting up straight with renewed energy as he continues talking animatedly."
+  - "Bamboo speaks into the mic with clear jaw motion. He shrugs with both palms up while talking, then drops his hands and gets serious, still speaking."
+  - "Bamboo talks directly to camera with natural mouth movement. He taps the side of his head — think about it — while still speaking, then opens his palm outward."
+  - "Bamboo speaks with animated facial expressions, mouth clearly moving. He counts on his fingers — one, two, three — while continuing to talk throughout."
+  - "Bamboo talks into the microphone, mouth moving naturally. He leans in conspiratorially, lowers his voice slightly, lips still moving with each word."
+  - "Bamboo speaks with visible lip and jaw motion throughout. He nods emphatically while talking, then points at the camera as if saying 'you know what I mean.'"
+  - "Bamboo talks with clear mouth movement, rubbing his chin thoughtfully. He suddenly snaps to camera with a knowing look while still speaking."
+  - "Bamboo speaks expressively into the mic, mouth and jaw animated. He clasps his hands on the desk, then opens them outward while continuing to talk."
+  - "Bamboo talks with natural lip movement, raising both eyebrows in surprise mid-sentence. His mouth stays animated as he nods in agreement."
+  - "Bamboo speaks directly to camera with visible mouth motion. He waves his hand dismissively while talking, then offers an alternative with an open palm."
+  - "Bamboo talks into the microphone with clear speaking animation. He steeples his fingers like a wise advisor while still speaking, then relaxes into a casual lean."
+
+voice:
+  style: "deep, smooth baritone, laid-back radio host energy"
+  elevenlabs_voice_id: "nPczCjzI2devNBz1zQrb"  # Brian — deep, resonant, comforting
+  elevenlabs_settings:
+    stability: 0.40          # lower = more expressive, less robotic
+    similarity_boost: 0.80   # high = consistent voice identity
+    style: 0.45              # higher = natural inflection
+    use_speaker_boost: true

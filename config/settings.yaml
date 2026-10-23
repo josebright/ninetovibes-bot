@@ -1,0 +1,83 @@
+channel:
+  handle: "@ninetovibes"
+  name: "NineToVibes"
+  timezone: "Africa/Lagos"  # WAT, UTC+1
+  language: "en-US"
+
+niches:
+  - id: finance
+    label: "Personal Finance"
+    hashtags: ["#PersonalFinance", "#MoneyStory", "#FinanceTok", "#MoneyMindset"]
+  - id: career
+    label: "Career & Money"
+    hashtags: ["#CareerMoney", "#SalaryNegotiation", "#QuitYour9to5"]
+
+cadence:
+  # Phase 1 (weeks 1-2): quality bake-in
+  phase_1:
+    shorts_per_day: 1
+    longs_per_day: 1
+    active_until: "2026-04-28"   # 2 weeks from today (2026-04-14)
+  # Phase 2 (week 3+)
+  phase_2:
+    shorts_per_day: 2
+    longs_per_day: 1
+
+schedule_wat:
+  short_slots: ["19:00", "21:00"]  # second slot only used in phase_2
+  long_slots: ["18:00"]
+  pipeline_run_time: "08:00"       # generate early, review during day, publish evening
+
+video:
+  short:
+    width: 1080
+    height: 1920
+    fps: 30
+    target_seconds: 90
+    max_seconds: 180
+  long:
+    width: 1920
+    height: 1080
+    fps: 30
+    target_seconds: 480   # 8 minutes
+    min_seconds: 360
+    max_seconds: 720
+
+voice:
+  # Edge-TTS voices. First week A/B: alternate per upload.
+  default_pool:
+    - "en-US-AriaNeural"
+    - "en-US-GuyNeural"
+    - "en-US-JennyNeural"
+  rate: "+0%"
+  volume: "+0%"
+  pitch: "+0Hz"
+
+compliance:
+  # Pages the compliance gate hash-diffs before every run.
+  # If any page hash changes, pipeline HALTS and pings Telegram.
+  youtube_policy_urls:
+    - name: "altered_or_synthetic_content"
+      url: "https://support.google.com/youtube/answer/14328491"
+    - name: "ypp_policies"
+      url: "https://support.google.com/youtube/answer/1311392"
+    - name: "shorts_monetization"
+      url: "https://support.google.com/youtube/answer/12504220"
+    - name: "reused_content_faq"
+      url: "https://support.google.com/youtube/community-guide/271248162/faq-reused-content-youtube-s-partner-program"
+    - name: "community_guidelines"
+      url: "https://www.youtube.com/howyoutubeworks/policies/community-guidelines/"
+
+upload:
+  privacy_status: "private"   # never "public" — user publishes manually via Telegram
+  made_for_kids: false
+  contains_synthetic_media: true   # AI disclosure — ALWAYS true for this pipeline
+  category_id_by_niche:
+    career: "27"     # Education
+    finance: "27"    # Education
+    love: "22"       # People & Blogs
+
+retention:
+  draft_days: 14
+  published_archive_days: 90
+  cache_days: 7

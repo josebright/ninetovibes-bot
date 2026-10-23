@@ -1,0 +1,102 @@
+# SOURCE ALLOWLIST
+# The script generator may ONLY cite facts that a fetcher in this file returned.
+# If it's not here, the LLM cannot use it as a source.
+# This is the credibility backbone — treat it like a security policy.
+
+career:
+  - id: bls
+    name: "U.S. Bureau of Labor Statistics"
+    type: api
+    base_url: "https://api.bls.gov/publicAPI/v2/"
+    citation_prefix: "U.S. Bureau of Labor Statistics"
+    license: "public domain (U.S. Government)"
+  - id: bls_ooh
+    name: "BLS Occupational Outlook Handbook"
+    type: html
+    base_url: "https://www.bls.gov/ooh/"
+    citation_prefix: "BLS Occupational Outlook Handbook"
+    license: "public domain (U.S. Government)"
+  - id: wef_jobs
+    name: "WEF Future of Jobs Report"
+    type: html
+    base_url: "https://www.weforum.org/publications/"
+    citation_prefix: "World Economic Forum, Future of Jobs Report"
+    license: "fair use, attributed"
+  - id: indeed_hiring_lab
+    name: "Indeed Hiring Lab"
+    type: rss
+    base_url: "https://www.hiringlab.org/feed/"
+    citation_prefix: "Indeed Hiring Lab"
+    license: "fair use, attributed"
+
+finance:
+  - id: fred
+    name: "Federal Reserve Economic Data"
+    type: api
+    base_url: "https://api.stlouisfed.org/fred/"
+    citation_prefix: "Federal Reserve Bank of St. Louis (FRED)"
+    license: "public domain (U.S. Government)"
+  - id: irs
+    name: "IRS"
+    type: html
+    base_url: "https://www.irs.gov/"
+    citation_prefix: "Internal Revenue Service"
+    license: "public domain (U.S. Government)"
+  - id: cfpb
+    name: "Consumer Financial Protection Bureau"
+    type: html
+    base_url: "https://www.consumerfinance.gov/"
+    citation_prefix: "Consumer Financial Protection Bureau"
+    license: "public domain (U.S. Government)"
+  - id: investor_gov
+    name: "SEC Investor.gov"
+    type: html
+    base_url: "https://www.investor.gov/"
+    citation_prefix: "U.S. Securities and Exchange Commission"
+    license: "public domain (U.S. Government)"
+
+love:
+  - id: apa
+    name: "American Psychological Association"
+    type: rss
+    base_url: "https://www.apa.org/news/rss/"
+    citation_prefix: "American Psychological Association"
+    license: "fair use, attributed"
+  - id: gottman
+    name: "The Gottman Institute Research"
+    type: html
+    base_url: "https://www.gottman.com/blog/"
+    citation_prefix: "The Gottman Institute"
+    license: "fair use, attributed"
+  - id: semantic_scholar
+    name: "Semantic Scholar (peer-reviewed)"
+    type: api
+    base_url: "https://api.semanticscholar.org/graph/v1/"
+    citation_prefix: "Peer-reviewed research (via Semantic Scholar)"
+    license: "per-paper; abstracts OK, quote limits apply"
+  - id: ted_cc
+    name: "TED Talks (Creative Commons)"
+    type: api
+    base_url: "https://www.ted.com/talks"
+    citation_prefix: "TED"
+    license: "CC BY-NC-ND 4.0 — attribution required, no modification of talk content"
+
+shared:
+  - id: gutenberg
+    name: "Project Gutenberg (public domain books)"
+    type: api
+    base_url: "https://gutendex.com/"
+    citation_prefix: "Project Gutenberg"
+    license: "public domain"
+  - id: reuters
+    name: "Reuters"
+    type: rss
+    base_url: "https://www.reuters.com/arc/outboundfeeds/rss/"
+    citation_prefix: "Reuters"
+    license: "fair use, attributed — no more than 3 consecutive words quoted"
+
+# HARD RULES enforced by src/script/generator.py:
+#   1. No YouTube videos as sources (copyright/reused-content risk).
+#   2. No Wikipedia as a cited source (only as a seed for finding primary sources).
+#   3. Every factual claim must map to a fetched source in this file.
+#   4. Every video description must include a "Sources:" list with URLs.
